@@ -1,39 +1,53 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './Home.css';
+import NewsArticle from "./../../Components/NewsArticle/NewsArticle";
+import "./Home.css";
 
-function Home(){
- const [news, setNews] = useState([])
+function Home() {
+  const [news, setNews] = useState([]);
 
- const loadNews = async ()=>{
-    const response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2023-09-01&sortBy=popularit&apiKey=cd831287c8b74f09a3a4861c8d5306e1")
-    setNews(response.data.articles)
- }
+  const loadNews = async () => {
+    const response = await axios.get(
+      "https://newsapi.org/v2/everything?q=pune&from=2023-09-03&sortBy=popularit&apiKey=cd831287c8b74f09a3a4861c8d5306e1"
+    );
+    setNews(response.data.articles);
+  };
 
- useState(()=>{
-    loadNews()
- } , [])
-    return(
-        <div>
-            <h1>News App
+  useState(() => {
+    loadNews();
+  }, []);
+  return (
+    <div>
+      <h1 className="headline">News App</h1>
+      <div className="dis-flex">
+        {news.map((newsArticals, index) => {
+          const {
+            author,
+            title,
+            description,
+            url,
+            urlToImage,
+            publishedAt,
+            content,
+          } = newsArticals;
 
-            </h1>
-
-            {
-                news.map((newsArticals, index)=>{
-                    const{author, title, description, url, urlToImage, poblishedAt, content} = newsArticals
-
-                    return (
-                        <div className="card">
-                            <h2>{title} </h2>
-                            <img src={urlToImage} alt="image" className="image-news"/>
-                            </div>
-                    )
-                })
-            }
-        </div>
-    )
+          return (
+            <>
+              <NewsArticle
+                author={author}
+                title={title}
+                description={description}
+                urlToImage={urlToImage}
+                publishedAt={publishedAt}
+                content={content}
+                key={index}
+              />
+            </>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
-
-export default Home
+export default Home;

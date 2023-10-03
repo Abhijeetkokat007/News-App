@@ -1,0 +1,16 @@
+.image-news{
+    display: inline-block;
+    width: 400px;
+    height: 250px;
+}
+.card{
+    border: 1px solid black;
+    /* margin: 45px; */
+    width: 400px;
+    padding: 10px;
+}
+.artical-info{
+    display: flex;
+    justify-content: space-between;
+   
+}
