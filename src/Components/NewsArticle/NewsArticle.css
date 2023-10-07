@@ -8,9 +8,20 @@
     /* margin: 45px; */
     width: 400px;
     padding: 10px;
+    height: 580px;
 }
 .artical-info{
     display: flex;
     justify-content: space-between;
    
+}
+.title{
+    color: brown;
+}
+.href-readmore{
+    cursor: pointer;
+    text-decoration: double;
+}
+.description{
+    color: rgb(133, 131, 131);
 }

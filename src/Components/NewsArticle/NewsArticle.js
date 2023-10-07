@@ -15,13 +15,14 @@ function NewsArticle(
       <div>
         <div className="card">
         <img src={urlToImage} alt="image" className="image-news" />
-          <h3>{title} </h3>
+          <h3 className="title">{title} </h3>
           <div className="artical-info">
             <p>{author}</p>
             <p>{publishedAt}</p>
+            {/* <p> {url} </p> */}
           </div>
-          <p>{description}</p>
-          <a href={url} target='_blank'>Read More</a>
+          <p className="description">{description}</p>
+          <a href={url} target="blank" className="href-readmore" >Read More...</a>
         </div>
       </div>
     </>
