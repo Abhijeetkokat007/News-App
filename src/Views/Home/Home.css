@@ -3,11 +3,13 @@
    
 }
 .card{
-    border: 1px solid rgb(146, 144, 144);
+    border: 1px solid rgb(245, 241, 241);
     margin: 30px;
     width: 400px;
     /* height: 450px; */
     padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px 0 rgb(115, 114, 114);
 }
 .dis-flex{
     display: flex;
