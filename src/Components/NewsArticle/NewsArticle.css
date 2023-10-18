@@ -25,3 +25,8 @@
 .description{
     color: rgb(133, 131, 131);
 }
+.card:hover{
+    .title{
+        color: rgb(33, 115, 3);
+    }
+}
